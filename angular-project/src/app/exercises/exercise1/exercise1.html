@@ -1,0 +1,30 @@
+<h1>Exercice 1</h1>
+<p
+  [style]="
+    'font-family:' +
+    form.value.font +
+    ' ;' +
+    'text-align:' +
+    form.value.alignment +
+    ';' +
+    'font-size:' +
+    form.value.size +
+    'px;'
+  "
+>
+  Bonjour <span [style]="'text-transform: uppercase;'">{{ form.value.enteredName }}</span> !
+</p>
+
+<form [formGroup]="form">
+  <input type="text" formControlName="enteredName" />
+  <select formControlName="font">
+    <option value="Times New Roman" selected>Times New Roman</option>
+    <option value="Arial">Arial</option>
+  </select>
+  <input type="number" formControlName="size" />
+  <div>
+    <input type="radio" name="alignment" value="left" formControlName="alignment" /> Left
+    <input type="radio" name="alignment" value="center" formControlName="alignment" /> Center
+    <input type="radio" name="alignment" value="right" formControlName="alignment" /> Right
+  </div>
+</form>
