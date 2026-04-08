@@ -1,11 +1,23 @@
-<p>exercise2 works!</p>
-<form>
-  <input type="number" />
-  <select>
-    <option value="plus">+</option>
-    <option value="minus">-</option>
-    <option value="times">x</option>
-    <option value="divide">/</option>
+<h2>Exercice 2</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <input type="number" formControlName="val1" />
+  <select formControlName="operator">
+    <option value="+" selected>+</option>
+    <option value="-">-</option>
+    <option value="*">x</option>
+    <option value="/">/</option>
   </select>
-  <input type="number" />
+  <input type="number" formControlName="val2" />
+  <button type="submit">Compute</button>
+  <button type="reset">Reset</button>
 </form>
+@if (currentResult(); as result) {
+  <p>= {{ result.result }}</p>
+}
+<h3>History</h3>
+
+@for (operation of history(); track operation.date) {
+  <app-operation [operation]="operation" />
+} @empty {
+  No history yet.
+}

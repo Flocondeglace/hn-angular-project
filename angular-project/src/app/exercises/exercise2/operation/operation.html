@@ -1,0 +1,9 @@
+<div>
+  <p>
+    {{ operation().leftOperand }} {{ operation().operator }} {{ operation().rightOperand }} =
+    {{ operation().result }} {{ operation().date | date: 'shortTime' }}
+  </p>
+  <div class="right">
+    <button (click)="onDeleteOperation()">&#128465;</button>
+  </div>
+</div>
