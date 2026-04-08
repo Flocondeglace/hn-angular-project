@@ -12,7 +12,7 @@
     'px;'
   "
 >
-  Bonjour <span [style]="'text-transform: uppercase;'">{{ form.value.enteredName }}</span> !
+  Bonjour {{ form.value.enteredName | uppercase }} !
 </p>
 
 <form [formGroup]="form">

@@ -1,9 +1,10 @@
+import { UpperCasePipe } from '@angular/common';
 import { Component, computed, effect, input, model, signal } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-exercise1',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, UpperCasePipe],
   templateUrl: './exercise1.html',
   styleUrl: './exercise1.css',
 })
