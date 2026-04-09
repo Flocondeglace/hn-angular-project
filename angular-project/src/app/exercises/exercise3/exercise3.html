@@ -1,0 +1,39 @@
+<h1>Exercice 3</h1>
+<p class="text-end">{{ currentTime() | date: 'medium' }}</p>
+<div class="row">
+  <div class="col-9 overflow-auto" style="max-height: 40em">
+    <table class="table table-hover table-striped">
+      <thead class="text-center">
+        <tr>
+          <th class="col-sm-2">
+            <button class="btn btn-outline-success w-100" (click)="onSort('label')">Label</button>
+          </th>
+
+          <th class="col-sm-1">
+            <button class="btn btn-outline-warning w-100" (click)="onSort('amount')">Amount</button>
+          </th>
+          <th class="col-sm-1">
+            <button class="btn btn-outline-danger w-100" (click)="onSort('balance')">
+              Balance
+            </button>
+          </th>
+          <th class="col-sm-3">
+            <button class="btn btn-outline-info w-100" (click)="onSort('date')">Date</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="text-center" style="cursor: help">
+        @for (transaction of transactions(); track transaction.id) {
+          <tr
+            app-transaction
+            [transactionData]="transaction"
+            (click)="onSelect(transaction.id)"
+          ></tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  <div class="col">
+    <router-outlet />
+  </div>
+</div>

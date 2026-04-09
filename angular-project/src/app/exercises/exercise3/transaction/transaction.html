@@ -1,0 +1,4 @@
+<th class="text-start">{{ transactionData().label }}</th>
+<td>{{ transactionData().amount | currency: 'EUR' }}</td>
+<td>{{ transactionData().balance | currency: 'EUR' }}</td>
+<td>{{ transactionData().date | date: 'short' }}</td>

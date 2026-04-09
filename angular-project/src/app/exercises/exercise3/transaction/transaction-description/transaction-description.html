@@ -1,0 +1,11 @@
+<div class="bg-light border rounded p-2">
+  @if (transaction(); as transaction) {
+    <p><strong>Label :</strong> {{ transaction.label }}</p>
+    <p><strong>Amount :</strong> {{ transaction.amount | currency: 'EUR' }}</p>
+    <p><strong>Balance :</strong> {{ transaction.balance | currency: 'EUR' }}</p>
+    <p><strong>Date :</strong> {{ transaction.date | date: 'fullDate' }}</p>
+    <p><strong>Description :</strong> {{ transaction.description }}</p>
+  } @else {
+    <p>Fetching transaction description...</p>
+  }
+</div>

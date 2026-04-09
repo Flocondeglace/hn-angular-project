@@ -1,9 +1,8 @@
-<div>
-  <p>
-    {{ operation().leftOperand }} {{ operation().operator }} {{ operation().rightOperand }} =
-    {{ operation().result }} {{ operation().date | date: 'mediumTime' }}
-  </p>
-  <div class="right">
-    <button (click)="onDeleteOperation()">&#128465;</button>
-  </div>
-</div>
+<td>
+  {{ operation().leftOperand }} {{ operation().operator }} {{ operation().rightOperand }} =
+  {{ operation().result }}
+</td>
+<td class="text-center">{{ operation().date | date: 'mediumTime' }}</td>
+<td class="text-center">
+  <button (click)="onDeleteOperation()">&#128465;</button>
+</td>

@@ -4,7 +4,7 @@ import { DatePipe } from '@angular/common';
 import { Operations } from '../operations.service';
 
 @Component({
-  selector: 'app-operation',
+  selector: 'tr[app-operation]',
   imports: [DatePipe],
   templateUrl: './operation.html',
   styleUrl: './operation.css',
